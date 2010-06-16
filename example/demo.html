@@ -116,7 +116,7 @@
 <section class="content" id="two">
   <header>
     <h2>Two</h2>
-    <a href="#" class="next">Next &darr;</a>
+    <a href="#" id="fancy">Fancy ++</a>
   </header>
 
   <p>Etiam egestas eleifend nulla, vitae lacinia felis malesuada eu. Suspendisse potenti. Phasellus dui elit, tempus quis rutrum vitae, tristique ac quam. Sed mi nisl, suscipit vel lacinia id, interdum vel lacus. Integer lacinia adipiscing urna sed auctor. Quisque sed arcu nisl, id pharetra augue. Integer vitae quam erat, vel elementum risus. Pellentesque vel nisi mi. Quisque ac nulla sit amet ipsum varius condimentum. In nisi urna, consequat vitae feugiat fringilla, dictum nec magna. Suspendisse scelerisque iaculis nulla, sit amet ultrices odio dapibus sed. Vivamus sed eros magna, id posuere velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sodales elementum lacus, id eleifend mi aliquam vitae. Curabitur et orci quis tellus hendrerit sagittis. Suspendisse hendrerit purus ut leo egestas congue. Duis vel nisl vel nunc pretium ornare at sit amet dui.
@@ -198,6 +198,14 @@
 
   $('#top').click(function() {
     scroll.show('first')
+    return false
+  })
+
+  $('#fancy').click(function() {
+    scroll.show('next', { complete: function() {
+        scroll.show('next')
+      }
+    })
     return false
   })
 </script>
