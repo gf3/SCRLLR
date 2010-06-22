@@ -26,6 +26,9 @@
     <h3>Demo</h3>
   </header>
 
+  <p>
+    Check out the schweet <a href="demo.html" title="SCRLLR Demo Page">demo page</a>.
+
 </section>
 
 <!-- Usage -->
@@ -35,6 +38,28 @@
   </header>
 
   <p>LOL NO U
+
+  <code class="prettyprint lang-js"><pre>// SCRLLR wants to know all about your slides/sections
+// So first up, let's tell it what a slide is:
+var scroll = $('section.slide').scrllr()
+
+// There are a few ways to change slides using the `show` method.
+// You can use the relative shortcuts ('first', 'prev', 'next', 'last'):
+scroll.show('last')
+
+// You can use a CSS selector:
+scroll.show('#rolf-container section[rel="lol"]')
+
+// And finally, you can simply use the numerical index (zero-based):
+scroll.show(3)
+
+// Likely, this would be in a link event handler somewhere, like so:
+$('a.next').live('click', function() {
+  scroll.show('next')
+  return false
+})
+</pre></code>
+
 </section>
 
 <!-- Docs -->
@@ -43,22 +68,76 @@
     <h3>Docs</h3>
   </header>
 
-  <p>OMG IS MANUAL
+  <p>
+    SCRLLR is meant to make fancy-ass page animations easy to manage. As you
+    can see, it's pretty easy to use. Style your sections/slides with CSS;
+    position them anywhere, and SCRLLR will take care of the rest.
 
+  <p>
+    It's is pretty smart, too. SCRLLR can determine which slide a user is on
+    when the page loads, or even when a user scrolls the page. This allows you
+    (the developer) to use relative controls like <code>next</code> and
+    <code>prev</code>.
+
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="method-name">show</span>(<span class="args">section [, options]</span>) &rarr; <span class="type">SCRLLR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">section</code> (<code class="type">String</code> <code class="type">Number</code>) &ndash; Keyword, CSS selector, or numerical index of the section to show. Keyword being one of <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current call to <code>show</code>.
+        </ol>
+        <p>
+          Display the specified section by scrolling to it's position all sexy-like.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="property-name">sections</span> &rarr; <span class="type">jQuery Object</span></code>
+      <dd>
+        <p>
+          All sections currently associated with the instance.
+    </div>
+    
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="property-name">options</span> &rarr; <span class="type">Object</span></code>
+      <dd>
+        <p>
+          Options used to initialise the instance.
+    </div>
+    
+  </dl>
+  
 </section>
 
 <!-- Footer -->
-<footer class="content">
-  <header>
-    <h3>Witty quote.</h3>
-  </header>
+<div id="footer-wrapper">
+  <footer class="content">
+    <header>
+      <h3>Witty quote.</h3>
+    </header>
 
-  <p>Written by <a href="http://gf3.ca" class="author">Gianni "gf3" Chiappetta</a>. &copy; Copyright your mom... but SRSLY copyrights are for tools.
-</footer>
+    <p>Written by <a href="http://gf3.ca" class="author">Gianni "gf3" Chiappetta</a>.
 
+    <p>A big thank-you to <a href="http://allyoucanleet.com/" class="author">John David Dalton</a> for putting up with my constant JS performance questions.
+
+    <h4>License</h4>
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+      <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a>.
+      To the extent possible under law, <a href="gf3.ca" rel="dct:publisher"><span property="dct:title">Gianni Chiappetta</span></a>
+      has waived all copyright and related or neighboring rights to
+      <span property="dct:title">TRNSFR</span>.
+      This work is published from
+      <span about="gf3.ca" property="vcard:Country" datatype="dct:ISO3166" content="CA">Canada</span>.
+    </p>
+    
+  </footer>
+</div>
+
+<script src="javascripts/prettify.js"></script>
 <script src="../vendor/jquery-1.4.2.min.js"></script>
 <script src="../lib/jquery.scrllr.js"></script>
 <script>
-
+  // Pretty Print
+  $(prettyPrint)
 </script>
 

@@ -12,7 +12,14 @@
   #000000   Colour      Used for:   
   ---------------------------------------------------------------------
 */
+html, body {
+  background-color: #EBEBEB;
+  font-size: 14px;
+  line-height: 18px;
+  color: #414141;
+}
 
+/* Typography */
 @font-face {
   font-family: 'RalewayThin';
   src: url('../fonts/raleway_thin-webfont.eot');
@@ -24,18 +31,38 @@
   font-style: normal;
 }
 
-html, body {
-  background-color: #EBEBEB;
-  font-size: 12px;
-  line-height: 18px;
-  color: #414141;
+@font-face {
+  font-family: 'DejaVuSansMonoBook';
+  src: url('../fonts/DejaVuSansMono-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-nav, header, section, footer {
-  display: block;
+@font-face {
+  font-family: 'DejaVuSansMonoOblique';
+  src: url('../fonts/DejaVuSansMono-Oblique-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-Oblique-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-Oblique-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-Oblique-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Typography */
+@font-face {
+  font-family: 'DejaVuSansMonoBold';
+  src: url('../fonts/DejaVuSansMono-Bold-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-Bold-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-Bold-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-Bold-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSansMonoBoldOblique';
+  src: url('../fonts/DejaVuSansMono-BoldOblique-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1, h2, h3 {
   font-family: RalewayThin, Helvetica;
   font-weight: normal;
@@ -67,15 +94,131 @@ p, ul, ol{
   margin-bottom: 18px;
 }
 
+/* Links */
+.content a:link {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:visited {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:hover {
+  text-decoration: underline;
+  color: #00b4ff;
+}
+.content a:active {
+  text-decoration: underline;
+  color: #3A3939;
+}
+
 /* Common Layout */
-body > header, section, footer, nav {
+body > header, section, footer {
+  display: block;
   margin: 18px auto;
   width: 960px;
 }
 
+/* ------------------------------ Code ------------------------------ */
+code { font-family: DejaVuSansMonoBook; }
+code > pre {
+  margin: 18px 0;
+  padding: 9px;
+  width: 942px;
+  background: #1F1F1F;
+  font-family: DejaVuSansMonoBook;
+  font-size: 12px;
+  color: #BABABA;
+     -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+     -moz-box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* FF3.5+ */
+  -webkit-box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* Saf3.0+, Chrome */
+          box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* Opera 10.5, IE 9.0 */
+}
+
+/* ------------------------------ Syntax Highlighting ------------------------------ */
+code .com { color: #BABABA; } /* Comment */
+code .kwd { color: #F8005D; } /* Keyword */
+code .pln { color: #FFFFFF; } /* Plain */
+code .pun { color: #97DC08; } /* Punctuation */
+code .lit { color: #9B61FF; } /* Literal */
+code .str { color: #E1C543; } /* String */
+
+/* ------------------------------ Documentation ------------------------------ */
+#docs {
+  overflow: hidden;
+}
+
+#docs .doc {
+  display: block;
+  width: 430px;
+  float: left;
+     -moz-transition: 0.2s opacity ease-out;
+  -webkit-transition: 0.2s opacity ease-out;
+       -o-transition: 0.2s opacity ease-out;
+}
+
+#docs .doc:nth-of-type(odd) {
+  clear: both;
+}
+
+#docs .doc:nth-of-type(even) {
+  margin-left: 80px;
+}
+
+#docs dl:hover .doc:not(:hover) { opacity: 0.3; }
+
+#docs dl dt {
+}
+
+#docs dl dt .signature {
+  font-weight: normal;
+}
+
+#docs dl dt .signature .class {
+  color: #9C9C9C;
+}
+
+#docs dl dt .signature .method-name, #docs dl dt .signature .property-name {
+  font-family: DejaVuSansMonoBold;
+}
+
+#docs dl dt .signature .args {
+  font-family: DejaVuSansMonoOblique;
+}
+
+#docs dl dd {
+  padding-bottom: 18px;
+}
+
+#docs dl dd code {
+  padding: 0 3px;
+  border: 1px solid transparent;
+     -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+
+#docs dl dd .arg {
+  background-color: #EFE;
+  border-color: #6B6;
+}
+
+#docs dl dd .type {
+  background-color: #F0F0F0;
+  border-color: #CCC;
+}
+
+#docs dl dd ol {
+  font-size: 11px;
+  list-style-type: disc;
+}
+
 /* ------------------------------ Header ------------------------------ */
 body > header {
-  margin-top: 36px;
+  margin-top: 0;
+  padding-top: 36px;
 }
 
 /* ------------------------------ Demo ------------------------------ */
@@ -83,13 +226,32 @@ body > header {
 }
 
 /* ------------------------------ Footer ------------------------------ */
+html, #footer-wrapper {
+  background-color: #666;
+}
+
+#footer-wrapper {
+  padding-top: 18px;
+  background: #666 url(../images/spikes.png) left top repeat-x;
+}
+
 footer {
+  color: #414141;
+}
+
+footer h3 {
+  color: #F7F7F7;
+  text-shadow: 0 -1px #000;
+}
+
+footer p {
+  font-size: 11px;
 }
 
 /* ------------------------------ Demo Container ------------------------------ */
 .demo_container {
   display: block;
-  margin: 18px auto;
+  margin: 36px auto 18px auto;
   padding: 18px 0;
   width: 620px;
      -moz-border-radius: 5px;
@@ -131,7 +293,7 @@ section .button {
   line-height: 18px;
   font-size: 12px;                                                                                                                                                                                                                                                 
   font-family: Helvetica;
-  text-decoration: none;
+  text-decoration: none !important;
      -moz-transition: opacity 0.5s ease-out;  /* FF3.7+ */
        -o-transition: opacity 0.5s ease-out;  /* Opera 10.5 */
   -webkit-transition: opacity 0.5s ease-out;  /* Saf3.2+, Chrome */
