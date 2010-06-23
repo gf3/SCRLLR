@@ -129,7 +129,7 @@ body > header, section, footer {
 
 /* ------------------------------ Code ------------------------------ */
 code { font-family: DejaVuSansMonoBook; }
-code > pre {
+code > pre, code + pre /* FireFox Hack */ {
   margin: 18px 0;
   padding: 9px;
   width: 942px;
@@ -146,12 +146,15 @@ code > pre {
 }
 
 /* ------------------------------ Syntax Highlighting ------------------------------ */
-code .com { color: #BABABA; } /* Comment */
-code .kwd { color: #F8005D; } /* Keyword */
-code .pln { color: #FFFFFF; } /* Plain */
-code .pun { color: #97DC08; } /* Punctuation */
-code .lit { color: #9B61FF; } /* Literal */
-code .str { color: #E1C543; } /* String */
+pre, code + pre  { color: #FFFFFF; } /* Plain */
+pre .sh_comment  { color: #BABABA; } /* Comment */
+pre .sh_keyword  { color: #F8005D; } /* Keyword */
+pre .sh_symbol   { color: #97DC08; } /* Symbol */
+pre .sh_string   { color: #E1C543; } /* String */
+pre .sh_number   { color: #9B61FF; } /* Number */
+pre .sh_cbracket { color: #97DC08; } /* Curly Bracket */
+pre .sh_function { font-family: DejaVuSansMonoOblique; } /* Function */
+
 
 /* ------------------------------ Documentation ------------------------------ */
 #docs {
@@ -248,6 +251,12 @@ footer {
 
 footer h3 {
   color: #F7F7F7;
+  text-shadow: 0 -1px #000;
+}
+
+footer h4 {
+  color: #999;
+  font-weight: normal;
   text-shadow: 0 -1px #000;
 }
 
