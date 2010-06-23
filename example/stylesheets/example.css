@@ -224,6 +224,10 @@ pre .sh_function { font-family: DejaVuSansMonoOblique; } /* Function */
   list-style-type: disc;
 }
 
+#docs dl dd > p {
+  margin-left: 24px;
+}
+
 /* ------------------------------ Header ------------------------------ */
 body > header {
   margin-top: 0;
