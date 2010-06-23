@@ -150,6 +150,8 @@ code .str { color: #E1C543; } /* String */
   overflow: hidden;
 }
 
+#docs:hover .doc:not(:hover) { opacity: 0.3; }
+
 #docs .doc {
   display: block;
   width: 430px;
@@ -167,20 +169,20 @@ code .str { color: #E1C543; } /* String */
   margin-left: 80px;
 }
 
-#docs dl:hover .doc:not(:hover) { opacity: 0.3; }
+#docs dl { overflow: hidden; }
 
 #docs dl dt {
 }
 
-#docs dl dt .signature {
+#docs dl dt .signature, #docs dl dt .option {
   font-weight: normal;
 }
 
-#docs dl dt .signature .class {
+#docs dl dt .signature .class, #docs dl dt .option .type {
   color: #9C9C9C;
 }
 
-#docs dl dt .signature .method-name, #docs dl dt .signature .property-name {
+#docs dl dt .signature .method-name, #docs dl dt .signature .property-name, #docs dl dt .option .name {
   font-family: DejaVuSansMonoBold;
 }
 
