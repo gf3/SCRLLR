@@ -90,6 +90,14 @@ h3 {
   text-shadow: 0 1px 1px #FFF;
 }
 
+h4 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0 1px 1px #FFF;
+  text-transform: uppercase;
+}
+
 p, ul, ol{
   margin-bottom: 18px;
 }
@@ -150,15 +158,11 @@ code .str { color: #E1C543; } /* String */
   overflow: hidden;
 }
 
-#docs:hover .doc:not(:hover) { opacity: 0.3; }
-
+/*
 #docs .doc {
   display: block;
   width: 430px;
   float: left;
-     -moz-transition: 0.2s opacity ease-out;
-  -webkit-transition: 0.2s opacity ease-out;
-       -o-transition: 0.2s opacity ease-out;
 }
 
 #docs .doc:nth-of-type(odd) {
@@ -168,6 +172,7 @@ code .str { color: #E1C543; } /* String */
 #docs .doc:nth-of-type(even) {
   margin-left: 80px;
 }
+*/
 
 #docs dl { overflow: hidden; }
 
