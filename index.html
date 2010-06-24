@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+ <title>jQuery SCRLLR - Make scroll elements!!!1!</title>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="stylesheets/tripoli.simple.css" type="text/css">
+  <!--[if IE]><link rel="stylesheet" href="stylesheets/tripoli.simple.ie.css" type="text/css"><![endif]-->
+  <link rel="stylesheet" href="stylesheets/example.css" type="text/css">
+
+<body>
+
+<!-- Header -->
+<header class="content">
+  <hgroup>
+    <h1>SCRLLR</h1>
+    <h2>Make great scrollings of the elements!!!</h2>
+  </hgroup>
+</header>
+
+<!-- Demo -->
+<section id="demo" class="content">
+  <header>
+    <h3>Demo</h3>
+  </header>
+
+  <p>
+    Check out the schweet <a href="demo.html" title="SCRLLR Demo Page">demo page</a>.
+  </p>
+
+</section>
+
+<!-- Get -->
+<section id="get" class="content">
+  <header>
+    <h3>Get</h3>
+  </header>
+
+  <div id="downloader">
+    <a id="get-github" href="http://github.com/gf3/scrllr" title="Browse Source on Github">Github</a>
+    <a id="get-zipfile" href="http://github.com/gf3/scrllr/zipball/master" title="Download Zip Archive">Zip Archive</a>
+  </div>
+
+</section>
+
+<!-- Usage -->
+<section id="usage" class="content">
+  <header>
+    <h3>Usage</h3>
+  </header>
+
+  <p>LOL NO U</p>
+
+  <code><pre class="sh_javascript">// SCRLLR wants to know all about your slides/sections
+// So first up, let's tell it what a slide is:
+var scroll = $('section.slide').scrllr()
+
+// There are a few ways to change slides using the `show` method.
+// You can use the relative shortcuts ('first', 'prev', 'next', 'last'):
+scroll.show('last')
+
+// You can use a CSS selector:
+scroll.show('#rolf-container section[rel="lol"]')
+
+// And finally, you can simply use the numerical index (zero-based):
+scroll.show(3)
+
+// Likely, this would be in a link event handler somewhere, like so:
+$('a.next').live('click', function() {
+  scroll.show('next')
+  return false
+})
+</pre></code>
+
+</section>
+
+<!-- Docs -->
+<section id="docs" class="content">
+  <header>
+    <h3>Docs</h3>
+  </header>
+
+  <p>
+    SCRLLR is meant to make fancy-ass page animations easy to manage. As you
+    can see, it's pretty easy to use. Style your sections/slides with CSS;
+    position them anywhere, and SCRLLR will take care of the rest.
+  </p>
+
+  <p>
+    It's is pretty smart, too. SCRLLR can determine which slide a user is on
+    when the page loads, or even when a user scrolls the page. This allows you
+    (the developer) to use relative controls like <code>next</code> and
+    <code>prev</code>.
+  </p>
+
+  <!-- Options -->
+  <h4 id="docs-options">Options</h4>
+
+  <p>
+    There are a number of options that you can set on the SCRLLR class,
+    instances, or even to the <code>show</code> method. Options and their
+    defaults:
+
+  <dl>
+    <div class="doc">
+      <dt><code class="option"><span class="name">easing</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>swing</code>, Fallback: <code>linear</code>
+          <br>
+          Name of jQuery easing method.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">duration</span> ( <span class="type">Number</span> )</code>
+      <dd>
+        <p>
+          Default: <code>400</code>
+          <br>
+          Duration of section transition animation.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">top</span> ( <span class="type">Number</span> )</code>
+      <dd>
+        <p>
+          Default: <code>0</code>
+          <br>
+          Adjust position of the top offset. Relative to the section position.
+          Can be a positive or negative number.  E.g. <code>-175</code> or
+          <code>300</code>.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">left</span> ( <span class="type">Number</span> )</code>
+      <dd>
+        <p>
+          Default: <code>0</code>
+          <br>
+          Adjust position of the left offset. Relative to the section position.
+          Can be a positive or negative number.  E.g. <code>-175</code> or
+          <code>300</code>.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">complete</span> ( <span class="type">Function</span> )</code>
+      <dd>
+        <p>
+          Default: <code>jQuery.noop</code>
+          <br>
+          Hollaback function called when section animation is complete.
+    </div>
+  </dl>
+
+  <!-- Constructor -->
+  <h4 id="docs-constructor">Constructor</h4>
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="method-name">new</span> <span class="class">SCRLLR</span>( <span class="args">elements [, options]</span> ) &rarr; <span class="type">SCRLLR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">elements</code> (<code class="type">jQuery Object</code>) &ndash; jQuery collection of elements to be used as sections.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="SCRLLR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new SCRLLR object for great justice.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">jQuery.fn.</span><span class="method-name">scrllr</span>( <span class="args">[options]</span> ) &rarr; <span class="type">SCRLLR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="SCRLLR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new SCRLLR object on a jQuery object.
+    </div>
+  </dl>
+
+  <!-- Instance Members -->
+  <h4 id="docs-instance-methods">Instance Members</h4>
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="method-name">show</span>( <span class="args">section [, options]</span> ) &rarr; <span class="type">SCRLLR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">section</code> (<code class="type">String</code> <code class="type">Number</code>) &ndash; Keyword, CSS selector, or numerical index of the section to show. Keyword being one of <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current call to <code>show</code>.
+        </ol>
+        <p>
+          Display the specified section by scrolling to it's position all sexy-like.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="property-name">sections</span> &rarr; <span class="type">jQuery Object</span></code>
+      <dd>
+        <p>
+          All sections currently associated with the instance.
+    </div>
+    
+    <div class="doc">
+      <dt><code class="signature"><span class="class">SCRLLR</span><span class="method-type">#</span><span class="property-name">options</span> &rarr; <span class="type">Object</span></code>
+      <dd>
+        <p>
+          Options used to initialise the instance. See the <a href="#docs-options" title="SCRLLR Options">options section</a> for more info.
+    </div>
+    
+  </dl>
+  
+</section>
+
+<!-- Footer -->
+<div id="footer-wrapper">
+  <footer class="content">
+    <header>
+      <h3>Witty quote.</h3>
+    </header>
+
+    <p>Written by <a href="http://gf3.ca" class="author">Gianni "gf3" Chiappetta</a>. My <a href="http://twitter.com/gf3" title="Gianni's Twitter">Twitter</a> and <a href="http://github.com/gf3" title="Gianni's GitHub">GitHub</a>.</p>
+
+    <p>A big thank-you to <a href="http://allyoucanleet.com/" class="author">John David Dalton</a> for putting up with my constant JS performance questions.</p>
+
+    <h4>License</h4>
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+      <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a>.
+      To the extent possible under law, <a href="http://gf3.ca" rel="dct:publisher"><span property="dct:title">Gianni Chiappetta</span></a>
+      has waived all copyright and related or neighboring rights to
+      <span property="dct:title">SCRLLR</span>.
+      This work is published from
+      <span about="http://gf3.ca" property="vcard:Country" datatype="dct:ISO3166" content="CA">Canada</span>.
+    </p>
+    
+  </footer>
+</div>
+
+<script src="javascripts/sh_main.min.js"></script>
+<script src="javascripts/sh_javascript.min.js"></script>
+<script src="../vendor/jquery-1.4.2.min.js"></script>
+<script src="../lib/jquery.scrllr.js"></script>
+<script>
+  // Syntax Highlighting
+  $(sh_highlightDocument)
+</script>
+
